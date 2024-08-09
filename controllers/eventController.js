@@ -17,6 +17,8 @@ exports.createEvent = async (req, res) => {
       votingEndTime,
     } = req.body;
 
+    console.log("Entering create event");
+
     if (!night || !venue || !author || !movies) {
       return res.status(400).json({ message: "All fields are required" });
     }
