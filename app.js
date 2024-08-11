@@ -5,6 +5,9 @@ const bodyParser = require("body-parser");
 require("dotenv").config();
 const connectDB = require("./config/database");
 const requestIp = require("request-ip");
+const pingBackendJob = require("./jobs/pingBackend");
+
+pingBackendJob.job.start();
 
 // Connect to MongoDB
 connectDB();
